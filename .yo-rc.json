@@ -1,0 +1,46 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "ir.rabbitgrout",
+            "nativeLanguage": "fa"
+        },
+        "jhipsterVersion": "5.8.1",
+        "applicationType": "monolith",
+        "baseName": "formfiller",
+        "packageName": "ir.rabbitgrout",
+        "packageFolder": "ir/rabbitgrout",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "no",
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "postgresql",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "Y2EzYmQ4MjI0MjhiMzg1ZTZhMDVlNjM5OGFmNGRmZGQxNGRhNjg3ZDJlNGJlNjRkZmRiNzUwN2VhYjc2NmZjMjI0ZTlhNzEyNDhjNDRkM2JhYTM2NjY5ZmUyZTNiNDgxMjE3YTc3ZmY1MGEzOGY3MTY2NDhlYzkxYzgxOTY0NDA=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [
+            {
+                "name": "generator-jhipster-primeng",
+                "version": "2.2.0"
+            },
+            {
+                "name": "generator-jhipster-primeng-charts",
+                "version": "1.2.0"
+            }
+        ],
+        "enableTranslation": true,
+        "nativeLanguage": "fa",
+        "languages": ["fa", "ar-ly", "en", "tr"]
+    }
+}
