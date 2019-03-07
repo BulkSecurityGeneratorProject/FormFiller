@@ -1,0 +1,30 @@
+{
+    "name": "Bank",
+    "fields": [
+        {
+            "fieldName": "bankName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A relationship",
+            "relationshipName": "branch",
+            "otherEntityName": "branch",
+            "otherEntityRelationshipName": "bank"
+        }
+    ],
+    "changelogDate": "20190307102705",
+    "entityTableName": "bank",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

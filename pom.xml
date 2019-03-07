@@ -373,7 +373,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>${start-class}</mainClass>
                     <executable>true</executable>
                     <fork>true</fork>
                     <!--
@@ -486,10 +485,10 @@
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                         <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://localhost:5432/formfiller</url>
+                        <url>jdbc:postgresql://localhost:5432/postgres</url>
                         <defaultSchemaName></defaultSchemaName>
-                        <username>formfiller</username>
-                        <password></password>
+                        <username>postgres</username>
+                        <password>root</password>
                         <referenceUrl>hibernate:spring:ir.rabbitgrout.domain?dialect=org.hibernate.dialect.PostgreSQL82Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
                         <logging>debug</logging>
@@ -627,7 +626,6 @@
                         <!-- Fixes a bug which will be solved in next version after 2.22.1 then this can be removed -->
                         <!-- see: https://issues.apache.org/jira/browse/SUREFIRE-1588 -->
                         <useSystemClassLoader>false</useSystemClassLoader>
-                        <outputDirectory>${sonar.junit.reportsPath}</outputDirectory>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -715,39 +713,6 @@
             </dependencies>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>com.github.eirslett</groupId>
-                        <artifactId>frontend-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>install node and npm</id>
-                                <goals>
-                                    <goal>install-node-and-npm</goal>
-                                </goals>
-                                <configuration>
-                                    <nodeVersion>${node.version}</nodeVersion>
-                                    <npmVersion>${npm.version}</npmVersion>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>npm install</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>webpack build dev</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <arguments>run webpack:build</arguments>
-                                    <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
@@ -852,7 +817,6 @@
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <configuration>
-                            <mainClass>${start-class}</mainClass>
                             <executable>true</executable>
                         </configuration>
                         <executions>
@@ -863,57 +827,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>com.github.eirslett</groupId>
-                        <artifactId>frontend-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>install node and npm</id>
-                                <goals>
-                                    <goal>install-node-and-npm</goal>
-                                </goals>
-                                <configuration>
-                                    <nodeVersion>${node.version}</nodeVersion>
-                                    <npmVersion>${npm.version}</npmVersion>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>npm install</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <configuration>
-                                    <arguments>install</arguments>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>webpack build test</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <phase>test</phase>
-                                <configuration>
-                                    <arguments>run webpack:test</arguments>
-                                    <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>webpack build prod</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <arguments>run webpack:prod</arguments>
-                                    <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>pl.project13.maven</groupId>
-                        <artifactId>git-commit-id-plugin</artifactId>
-                    </plugin>
+
                 </plugins>
             </build>
             <properties>
@@ -957,7 +871,6 @@
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <configuration>
-                            <mainClass>${start-class}</mainClass>
                             <executable>true</executable>
                             <fork>true</fork>
                             <addResources>true</addResources>
@@ -980,10 +893,6 @@
                                 <phase>none</phase>
                             </execution>
                         </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>net.alchim31.maven</groupId>
-                        <artifactId>scala-maven-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>

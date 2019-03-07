@@ -1,0 +1,62 @@
+{
+    "name": "Customer",
+    "fields": [
+        {
+            "fieldName": "lastName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nationalId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identificationNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fatherName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "plainAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birth",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "birthPlace",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "address",
+            "otherEntityName": "address",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "customer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A relationship",
+            "relationshipName": "sibaAccountForm",
+            "otherEntityName": "sibaAccountForm",
+            "otherEntityRelationshipName": "customer"
+        }
+    ],
+    "changelogDate": "20190307102708",
+    "entityTableName": "customer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

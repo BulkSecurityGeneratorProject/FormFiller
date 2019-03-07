@@ -1,0 +1,54 @@
+{
+    "formfillerApp": {
+        "sibaAccountForm": {
+            "home": {
+                "title": "Siba Account Forms",
+                "createLabel": "Create a new Siba Account Form",
+                "createOrEditLabel": "Create or edit a Siba Account Form"
+            },
+            "created": "A new Siba Account Form is created with identifier {{ param }}",
+            "updated": "A Siba Account Form is updated with identifier {{ param }}",
+            "deleted": "A Siba Account Form is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Siba Account Form {{ id }}?"
+            },
+            "detail": {
+                "title": "Siba Account Form"
+            },
+            "registerDate": "Register Date",
+            "registrationNumber": "Registration Number",
+            "registrationPlace": "Registration Place",
+            "registrationCapital": "Registration Capital",
+            "activityType": "Activity Type",
+            "longTime": "Long Time",
+            "boardManagementLong": "Board Management Long",
+            "phoneNumber1": "Phone Number 1",
+            "phoneNumber2": "Phone Number 2",
+            "faxNumber": "Fax Number",
+            "zipCode": "Zip Code",
+            "emailAddress": "Email Address",
+            "plainAddress": "Plain Address",
+            "accountRegistrationPurpose": "Account Registration Purpose",
+            "fullName1": "Full Name 1",
+            "fullName2": "Full Name 2",
+            "fullName3": "Full Name 3",
+            "fullName4": "Full Name 4",
+            "fullName5": "Full Name 5",
+            "fullName6": "Full Name 6",
+            "customerNumber1": "Customer Number 1",
+            "customerNumber2": "Customer Number 2",
+            "customerNumber3": "Customer Number 3",
+            "customerNumber4": "Customer Number 4",
+            "customerNumber5": "Customer Number 5",
+            "customerNumber6": "Customer Number 6",
+            "sendingBillCycle": "Sending Bill Cycle",
+            "howToSendBill": "How To Send Bill",
+            "otherServices": "Other Services",
+            "accountType": "Account Type",
+            "letterNumber": "Letter Number",
+            "letterDate": "Letter Date",
+            "letterOrganization": "Letter Organization",
+            "customer": "Customer"
+        }
+    }
+}

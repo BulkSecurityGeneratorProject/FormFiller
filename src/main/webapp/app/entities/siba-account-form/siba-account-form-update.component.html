@@ -1,0 +1,201 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-siba-account-form-heading" jhiTranslate="formfillerApp.sibaAccountForm.home.createOrEditLabel">Create or edit a Siba Account Form</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!sibaAccountForm.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sibaAccountForm.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.registerDate" for="field_registerDate">Register Date</label>
+                    <div class="input-group">
+                        <input id="field_registerDate" type="text" class="form-control" name="registerDate" ngbDatepicker  #registerDateDp="ngbDatepicker" [(ngModel)]="sibaAccountForm.registerDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="registerDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.registrationNumber" for="field_registrationNumber">Registration Number</label>
+                    <input type="text" class="form-control" name="registrationNumber" id="field_registrationNumber"
+                        [(ngModel)]="sibaAccountForm.registrationNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.registrationPlace" for="field_registrationPlace">Registration Place</label>
+                    <input type="text" class="form-control" name="registrationPlace" id="field_registrationPlace"
+                        [(ngModel)]="sibaAccountForm.registrationPlace" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.registrationCapital" for="field_registrationCapital">Registration Capital</label>
+                    <input type="text" class="form-control" name="registrationCapital" id="field_registrationCapital"
+                        [(ngModel)]="sibaAccountForm.registrationCapital" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.activityType" for="field_activityType">Activity Type</label>
+                    <input type="text" class="form-control" name="activityType" id="field_activityType"
+                        [(ngModel)]="sibaAccountForm.activityType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.longTime" for="field_longTime">Long Time</label>
+                    <input type="text" class="form-control" name="longTime" id="field_longTime"
+                        [(ngModel)]="sibaAccountForm.longTime" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.boardManagementLong" for="field_boardManagementLong">Board Management Long</label>
+                    <input type="text" class="form-control" name="boardManagementLong" id="field_boardManagementLong"
+                        [(ngModel)]="sibaAccountForm.boardManagementLong" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.phoneNumber1" for="field_phoneNumber1">Phone Number 1</label>
+                    <input type="text" class="form-control" name="phoneNumber1" id="field_phoneNumber1"
+                        [(ngModel)]="sibaAccountForm.phoneNumber1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.phoneNumber2" for="field_phoneNumber2">Phone Number 2</label>
+                    <input type="text" class="form-control" name="phoneNumber2" id="field_phoneNumber2"
+                        [(ngModel)]="sibaAccountForm.phoneNumber2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.faxNumber" for="field_faxNumber">Fax Number</label>
+                    <input type="text" class="form-control" name="faxNumber" id="field_faxNumber"
+                        [(ngModel)]="sibaAccountForm.faxNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.zipCode" for="field_zipCode">Zip Code</label>
+                    <input type="text" class="form-control" name="zipCode" id="field_zipCode"
+                        [(ngModel)]="sibaAccountForm.zipCode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.emailAddress" for="field_emailAddress">Email Address</label>
+                    <input type="text" class="form-control" name="emailAddress" id="field_emailAddress"
+                        [(ngModel)]="sibaAccountForm.emailAddress" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.plainAddress" for="field_plainAddress">Plain Address</label>
+                    <input type="text" class="form-control" name="plainAddress" id="field_plainAddress"
+                        [(ngModel)]="sibaAccountForm.plainAddress" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.accountRegistrationPurpose" for="field_accountRegistrationPurpose">Account Registration Purpose</label>
+                    <input type="text" class="form-control" name="accountRegistrationPurpose" id="field_accountRegistrationPurpose"
+                        [(ngModel)]="sibaAccountForm.accountRegistrationPurpose" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.fullName1" for="field_fullName1">Full Name 1</label>
+                    <input type="text" class="form-control" name="fullName1" id="field_fullName1"
+                        [(ngModel)]="sibaAccountForm.fullName1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.fullName2" for="field_fullName2">Full Name 2</label>
+                    <input type="text" class="form-control" name="fullName2" id="field_fullName2"
+                        [(ngModel)]="sibaAccountForm.fullName2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.fullName3" for="field_fullName3">Full Name 3</label>
+                    <input type="text" class="form-control" name="fullName3" id="field_fullName3"
+                        [(ngModel)]="sibaAccountForm.fullName3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.fullName4" for="field_fullName4">Full Name 4</label>
+                    <input type="text" class="form-control" name="fullName4" id="field_fullName4"
+                        [(ngModel)]="sibaAccountForm.fullName4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.fullName5" for="field_fullName5">Full Name 5</label>
+                    <input type="text" class="form-control" name="fullName5" id="field_fullName5"
+                        [(ngModel)]="sibaAccountForm.fullName5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.fullName6" for="field_fullName6">Full Name 6</label>
+                    <input type="text" class="form-control" name="fullName6" id="field_fullName6"
+                        [(ngModel)]="sibaAccountForm.fullName6" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.customerNumber1" for="field_customerNumber1">Customer Number 1</label>
+                    <input type="text" class="form-control" name="customerNumber1" id="field_customerNumber1"
+                        [(ngModel)]="sibaAccountForm.customerNumber1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.customerNumber2" for="field_customerNumber2">Customer Number 2</label>
+                    <input type="text" class="form-control" name="customerNumber2" id="field_customerNumber2"
+                        [(ngModel)]="sibaAccountForm.customerNumber2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.customerNumber3" for="field_customerNumber3">Customer Number 3</label>
+                    <input type="text" class="form-control" name="customerNumber3" id="field_customerNumber3"
+                        [(ngModel)]="sibaAccountForm.customerNumber3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.customerNumber4" for="field_customerNumber4">Customer Number 4</label>
+                    <input type="text" class="form-control" name="customerNumber4" id="field_customerNumber4"
+                        [(ngModel)]="sibaAccountForm.customerNumber4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.customerNumber5" for="field_customerNumber5">Customer Number 5</label>
+                    <input type="text" class="form-control" name="customerNumber5" id="field_customerNumber5"
+                        [(ngModel)]="sibaAccountForm.customerNumber5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.customerNumber6" for="field_customerNumber6">Customer Number 6</label>
+                    <input type="text" class="form-control" name="customerNumber6" id="field_customerNumber6"
+                        [(ngModel)]="sibaAccountForm.customerNumber6" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.sendingBillCycle" for="field_sendingBillCycle">Sending Bill Cycle</label>
+                    <input type="text" class="form-control" name="sendingBillCycle" id="field_sendingBillCycle"
+                        [(ngModel)]="sibaAccountForm.sendingBillCycle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.howToSendBill" for="field_howToSendBill">How To Send Bill</label>
+                    <input type="text" class="form-control" name="howToSendBill" id="field_howToSendBill"
+                        [(ngModel)]="sibaAccountForm.howToSendBill" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.otherServices" for="field_otherServices">Other Services</label>
+                    <input type="text" class="form-control" name="otherServices" id="field_otherServices"
+                        [(ngModel)]="sibaAccountForm.otherServices" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.accountType" for="field_accountType">Account Type</label>
+                    <input type="text" class="form-control" name="accountType" id="field_accountType"
+                        [(ngModel)]="sibaAccountForm.accountType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.letterNumber" for="field_letterNumber">Letter Number</label>
+                    <input type="text" class="form-control" name="letterNumber" id="field_letterNumber"
+                        [(ngModel)]="sibaAccountForm.letterNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.letterDate" for="field_letterDate">Letter Date</label>
+                    <input type="text" class="form-control" name="letterDate" id="field_letterDate"
+                        [(ngModel)]="sibaAccountForm.letterDate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.letterOrganization" for="field_letterOrganization">Letter Organization</label>
+                    <input type="text" class="form-control" name="letterOrganization" id="field_letterOrganization"
+                        [(ngModel)]="sibaAccountForm.letterOrganization" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.sibaAccountForm.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" [(ngModel)]="sibaAccountForm.customer" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerOption.id === sibaAccountForm.customer?.id ? sibaAccountForm.customer : customerOption" *ngFor="let customerOption of customers; trackBy: trackCustomerById">{{customerOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

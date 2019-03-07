@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customer">
+            <h2><span jhiTranslate="formfillerApp.customer.detail.title">Customer</span> {{customer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="formfillerApp.customer.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{customer.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="formfillerApp.customer.nationalId">National Id</span></dt>
+                <dd>
+                    <span>{{customer.nationalId}}</span>
+                </dd>
+                <dt><span jhiTranslate="formfillerApp.customer.identificationNumber">Identification Number</span></dt>
+                <dd>
+                    <span>{{customer.identificationNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="formfillerApp.customer.fatherName">Father Name</span></dt>
+                <dd>
+                    <span>{{customer.fatherName}}</span>
+                </dd>
+                <dt><span jhiTranslate="formfillerApp.customer.plainAddress">Plain Address</span></dt>
+                <dd>
+                    <span>{{customer.plainAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="formfillerApp.customer.birth">Birth</span></dt>
+                <dd>
+                    <span>{{customer.birth}}</span>
+                </dd>
+                <dt><span jhiTranslate="formfillerApp.customer.birthPlace">Birth Place</span></dt>
+                <dd>
+                    <span>{{customer.birthPlace}}</span>
+                </dd>
+                <dt><span jhiTranslate="formfillerApp.customer.address">Address</span></dt>
+                <dd>
+                    <div *ngIf="customer.address">
+                        <a [routerLink]="['/address', customer.address?.id, 'view']">{{customer.address?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer', customer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

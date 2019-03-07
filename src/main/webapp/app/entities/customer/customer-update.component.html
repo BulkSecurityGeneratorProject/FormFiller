@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-customer-heading" jhiTranslate="formfillerApp.customer.home.createOrEditLabel">Create or edit a Customer</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!customer.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="customer.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.customer.lastName" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                        [(ngModel)]="customer.lastName" required/>
+                    <div [hidden]="!(editForm.controls.lastName?.dirty && editForm.controls.lastName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.lastName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.customer.nationalId" for="field_nationalId">National Id</label>
+                    <input type="text" class="form-control" name="nationalId" id="field_nationalId"
+                        [(ngModel)]="customer.nationalId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.customer.identificationNumber" for="field_identificationNumber">Identification Number</label>
+                    <input type="text" class="form-control" name="identificationNumber" id="field_identificationNumber"
+                        [(ngModel)]="customer.identificationNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.customer.fatherName" for="field_fatherName">Father Name</label>
+                    <input type="text" class="form-control" name="fatherName" id="field_fatherName"
+                        [(ngModel)]="customer.fatherName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.customer.plainAddress" for="field_plainAddress">Plain Address</label>
+                    <input type="text" class="form-control" name="plainAddress" id="field_plainAddress"
+                        [(ngModel)]="customer.plainAddress" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.customer.birth" for="field_birth">Birth</label>
+                    <div class="input-group">
+                        <input id="field_birth" type="text" class="form-control" name="birth" ngbDatepicker  #birthDp="ngbDatepicker" [(ngModel)]="customer.birth"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="birthDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.customer.birthPlace" for="field_birthPlace">Birth Place</label>
+                    <input type="text" class="form-control" name="birthPlace" id="field_birthPlace"
+                        [(ngModel)]="customer.birthPlace" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="formfillerApp.customer.address" for="field_address">Address</label>
+                    <select class="form-control" id="field_address" name="address" [(ngModel)]="customer.address">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="addressOption.id === customer.address?.id ? customer.address : addressOption" *ngFor="let addressOption of addresses; trackBy: trackAddressById">{{addressOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

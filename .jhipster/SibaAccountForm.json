@@ -1,0 +1,154 @@
+{
+    "name": "SibaAccountForm",
+    "fields": [
+        {
+            "fieldName": "registerDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "registrationNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "registrationPlace",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "registrationCapital",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activityType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "boardManagementLong",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "faxNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zipCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emailAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "plainAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountRegistrationPurpose",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fullName6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customerNumber1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customerNumber2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customerNumber3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customerNumber4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customerNumber5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customerNumber6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sendingBillCycle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "howToSendBill",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "otherServices",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "letterNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "letterDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "letterOrganization",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190307102709",
+    "entityTableName": "siba_account_form",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

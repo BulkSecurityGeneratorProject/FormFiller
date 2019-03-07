@@ -1,0 +1,97 @@
+entity Bank {
+    bankName String required
+}
+
+entity Branch {
+	branchName String required
+    branchPlainAddress String required
+    branchNumber String required
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Address {
+	country String required
+	province String required
+	city String  required
+}
+
+entity Customer {
+	lastName String required
+    lastName String required
+    nationalId String 
+    identificationNumber String 
+    fatherName String 
+    plainAddress String 
+    birth LocalDate
+    birthPlace String
+}
+
+
+entity SibaAccountForm {
+	registerDate LocalDate
+	registrationNumber String
+    registrationPlace String
+    registrationCapital String
+    activityType String
+    longTime String
+    boardManagementLong String
+    phoneNumber1 String
+    phoneNumber2 String 
+    faxNumber String
+    zipCode String
+    emailAddress String
+    plainAddress String
+    accountRegistrationPurpose String 
+    fullName1 String
+    fullName2 String
+    fullName3 String
+    fullName4 String
+    fullName5 String
+    fullName6 String
+    customerNumber1 String
+    customerNumber2 String
+    customerNumber3 String
+    customerNumber4 String
+    customerNumber5 String
+    customerNumber6 String
+    sendingBillCycle String 
+    howToSendBill String 
+    otherServices String 
+    accountType String 
+    letterNumber String 
+    letterDate String 
+    letterOrganization String 
+    
+}
+
+relationship OneToOne {
+	Branch{address} to Address
+}
+
+relationship OneToOne {
+	Customer{address} to Address
+}
+
+relationship OneToMany {
+	/**
+	* A relationship
+	*/
+	Bank{branch} to
+	/**
+	* Another side of the same relationship
+	*/
+	Branch
+}
+
+relationship OneToMany {
+	/**
+	* A relationship
+	*/
+	Customer{sibaAccountForm} to
+	/**
+	* Another side of the same relationship
+	*/
+	SibaAccountForm
+}
+
